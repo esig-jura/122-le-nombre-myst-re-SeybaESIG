@@ -18,7 +18,7 @@ function tireNombre(min, max) {
 }
 
 const MIN = 50;
-const MAX = 150;
+const MAX = 100;
 
 /**
  * Fonction principale
@@ -31,7 +31,7 @@ const MAX = 150;
      let tentatives = 1;
      let nombreSaisi;
 
-     nombreSaisi = parseInt(prompt(`Entrez un nombre entre ${MIN} et ${MAX}`));
+     nombreSaisi = parseInt(prompt(`Entrez un nombre entre ${min} et ${max}`));
 
      // Tant que le nombre saisi est différent du nombre mystère
      while (nombreSaisi !== nombreMystere){
@@ -47,4 +47,4 @@ const MAX = 150;
  }
 
 
- deviner();
+ deviner(MIN, MAX);
