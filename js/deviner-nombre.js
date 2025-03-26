@@ -19,24 +19,32 @@ function tireNombre(min, max) {
 
 const MIN = 50;
 const MAX = 150;
-// alert(tireNombre(MIN, MAX));
 
-let nombreMystere = 5;
-let tentatives = 1;
-let nombreSaisi = 0;
+/**
+ * Fonction principale
+ * @returns {void}
+ * @param min
+ * @param max
+ */
+ function deviner(min, max) {
+     let nombreMystere = tireNombre(min, max);
+     let tentatives = 1;
+     let nombreSaisi;
 
-nombreSaisi = parseInt(prompt(`Entrez un nombre entre ${MIN} et ${MAX}`));
+     nombreSaisi = parseInt(prompt(`Entrez un nombre entre ${MIN} et ${MAX}`));
 
-
-
-
- while (nombreSaisi !== nombreMystere){
-     tentatives++;
-     if (nombreSaisi < nombreMystere){
-            nombreSaisi = parseInt(prompt(`Plus grand!`));
-     } else {
-            nombreSaisi = parseInt(prompt(`Plus petit!`));
+     // Tant que le nombre saisi est différent du nombre mystère
+     while (nombreSaisi !== nombreMystere){
+         tentatives++;
+         if (nombreSaisi < nombreMystere){
+             nombreSaisi = parseInt(prompt(`Plus grand!`));
+         } else {
+             nombreSaisi = parseInt(prompt(`Plus petit!`));
+         }
      }
+
+     alert(`Bravo! Vous avez trouvé le nombre mystère ${nombreMystere} en ${tentatives} tentatives!`);
  }
 
-    alert(`Bravo! Vous avez trouvé le nombre mystère ${nombreMystere} en ${tentatives} tentatives!`);
+
+ deviner();
